@@ -1,5 +1,10 @@
+import { useRoutes } from "react-router-dom";
+import routeslist from "./routes/routelist";
+
 function App() {
-    return <></>;
+    const element = useRoutes(routeslist);
+
+    return element;
 }
 
 export default App;
