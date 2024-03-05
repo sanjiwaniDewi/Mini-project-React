@@ -34,7 +34,9 @@ const FormLogReg = ({ title }) => {
                 const token = res.data.token;
                 localStorage.setItem("access_token", token);
                 setLoading(false);
-                setNotif("login berhasil");
+                setNotif(
+                    title === "Login" ? "Login Success" : "Register Success"
+                );
 
                 setTimeout(() => {
                     if (title === "Register") {
