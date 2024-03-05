@@ -10,6 +10,10 @@ const FormLogReg = ({ title }) => {
 
     const navigate = useNavigate();
 
+    const handleLowerCase = (title) => {
+        return title.toLowerCase();
+    };
+
     const handleEmail = (e) => {
         setEmail(e.target.value);
     };
@@ -49,7 +53,7 @@ const FormLogReg = ({ title }) => {
     return (
         <div>
             <h1>{title}</h1>
-
+            {notif && <p>{notif}</p>}
             <div>
                 <input
                     type="email"
@@ -63,7 +67,7 @@ const FormLogReg = ({ title }) => {
                 />
             </div>
             <button type="submit" onClick={handleSubmit}>
-                Submit
+                {loading ? "loading ..." : handleLowerCase(title)}
             </button>
         </div>
     );
