@@ -69,6 +69,13 @@ const FormLogReg = ({ title }) => {
             <button type="submit" onClick={handleSubmit}>
                 {loading ? "loading ..." : handleLowerCase(title)}
             </button>
+
+            {title === "Login" && (
+                <div>
+                    <p>new in Prods ? </p>
+                    <Link to="/register">Register Now</Link>
+                </div>
+            )}
         </div>
     );
 };
