@@ -79,3 +79,5 @@ const FormLogReg = ({ title }) => {
         </div>
     );
 };
+
+export default FormLogReg;
