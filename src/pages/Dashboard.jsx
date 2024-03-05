@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Table from "../components/Table";
 import axios from "axios";
+import Pagination from "../components/Pagination";
 
 const Dashboard = () => {
     const [leader, setLeader] = useState([]);
@@ -12,35 +13,50 @@ const Dashboard = () => {
     });
 
     const handleLeaderData = () => {
-        axios.get(`https://reqres.in/api/users?page=${page}`).then((res) => {
-            const dataLead = [];
-            res.data.data.map((item) => {
-                const data = {
-                    id: item.id,
-                    name: `${item.first_name} ${item.last_name}`,
-                    email: item.email,
-                };
-                setPagination({
-                    page: res.data.page,
-                    per_page: res.data.per_page,
-                    total: res.data.total,
-                    total_pages: res.data.total_pages,
-                });
+        axios
+            .get(`https://reqres.in/api/users?page=${pagination.page}`)
+            .then((res) => {
+                const dataLead = [];
+                res.data.data.map((item) => {
+                    const data = {
+                        id: item.id,
+                        name: `${item.first_name} ${item.last_name}`,
+                        email: item.email,
+                    };
+                    setPagination({
+                        page: res.data.page,
+                        per_page: res.data.per_page,
+                        total: res.data.total,
+                        total_pages: res.data.total_pages,
+                    });
 
-                dataLead.push(data);
+                    dataLead.push(data);
+                });
+                setLeader(dataLead);
             });
-            setLeader(dataLead);
+    };
+
+    const handlePagination = (num) => {
+        setPagination({
+            ...pagination,
+            page: num,
         });
     };
 
     useEffect(() => {
-        handleLeaderData(page);
-    }, [page]);
+        handleLeaderData();
+    }, [pagination.page]);
 
     return (
         <>
             <h1> Dashboard</h1>
             <Table leaderData={leader} />
+
+            <Pagination
+                currentPage={pagination.page}
+                total={pagination.total_pages}
+                handlePagination={handlePagination}
+            />
         </>
     );
 };
