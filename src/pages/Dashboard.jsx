@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Table from "../components/Table";
 import axios from "axios";
 
 const Dashboard = () => {
     const [leader, setLeader] = useState([]);
-    const [page, setPage] = useState({
+    const [pagination, setPagination] = useState({
         page: 1,
         per_page: 0,
         total: 0,
@@ -20,7 +20,7 @@ const Dashboard = () => {
                     name: `${item.first_name} ${item.last_name}`,
                     email: item.email,
                 };
-                setPage({
+                setPagination({
                     page: res.data.page,
                     per_page: res.data.per_page,
                     total: res.data.total,
@@ -34,7 +34,7 @@ const Dashboard = () => {
     };
 
     useEffect(() => {
-        handleDataLeader(page);
+        handleLeaderData(page);
     }, [page]);
 
     return (
