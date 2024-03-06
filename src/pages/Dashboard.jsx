@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Table from "../components/Table";
 import axios from "axios";
 import Pagination from "../components/Pagination";
+import Layout from "../components/Layout";
 
 const Dashboard = () => {
     const [leader, setLeader] = useState([]);
@@ -48,7 +49,7 @@ const Dashboard = () => {
     }, [pagination.page]);
 
     return (
-        <>
+        <Layout>
             <h1> Dashboard</h1>
             <Table leaderData={leader} />
 
@@ -57,7 +58,7 @@ const Dashboard = () => {
                 total={pagination.total_pages}
                 handlePagination={handlePagination}
             />
-        </>
+        </Layout>
     );
 };
 
