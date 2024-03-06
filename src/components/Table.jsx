@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-const Table = ({ leaderData }) => {
+const Table = ({ data }) => {
     let header = [
         ...new Set(
-            leaderData
+            data
                 .map((item) => Object.keys(item))
                 .join(",")
                 .split(",")
@@ -20,7 +20,7 @@ const Table = ({ leaderData }) => {
                 </tr>
             </thead>
             <tbody>
-                {leaderData.map((item, indexs) => (
+                {data.map((item, indexs) => (
                     <tr key={indexs}>
                         {header.map((head, index) => {
                             if (index === 1) {
