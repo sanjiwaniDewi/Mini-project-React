@@ -51,7 +51,7 @@ const Dashboard = () => {
     return (
         <Layout>
             <h1> Dashboard</h1>
-            <Table leaderData={leader} />
+            <Table data={leader} />
 
             <Pagination
                 currentPage={pagination.page}
