@@ -3,10 +3,10 @@ import Sidebar from "./Sidebar";
 import { useState } from "react";
 
 const Layout = ({ children }) => {
-    const [sidebar, setSidebar] = useState(false);
+    const [sidebar, setSidebar] = useState(true);
 
     const handleSidebar = () => {
-        sidebar ? setSidebar(false) : setSidebar(true);
+        setSidebar(!sidebar);
     };
     return (
         <div>
