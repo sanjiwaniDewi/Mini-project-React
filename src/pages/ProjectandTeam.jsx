@@ -3,14 +3,14 @@ import Layout from "../components/Layout";
 import Table from "../components/Table";
 import projects from "../data/project";
 
-const Project = () => {
+const ProjectandTeam = ({ title, data, route }) => {
     return (
         <Layout>
-            <h2>Project page</h2>
-            <Table data={projects} />
-            <Link to="new-project">Create New Project</Link>
+            <h2>{title} page</h2>
+            <Table data={data} />
+            <Link to={route}>Create New {title}</Link>
         </Layout>
     );
 };
 
-export default Project;
+export default ProjectandTeam;
