@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Layout from "../components/Layout";
 
 const LeaderDetail = () => {
     const [leaderData, setLeaderData] = useState({});
@@ -30,7 +31,7 @@ const LeaderDetail = () => {
     }, []);
 
     return (
-        <>
+        <Layout>
             <h2>Detail Leader</h2>
             {loading ? (
                 <h2>Loading ....</h2>
@@ -45,7 +46,7 @@ const LeaderDetail = () => {
                     <p>{leaderData.email}</p>
                 </div>
             )}
-        </>
+        </Layout>
     );
 };
 
