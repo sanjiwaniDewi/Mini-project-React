@@ -43,7 +43,7 @@ const Table = ({ data }) => {
                                 let members = item[head]
                                     .map((a) => a.name)
                                     .join(", ");
-                                return <td>{members}</td>;
+                                return <td key={index}>{members}</td>;
                             } else {
                                 return <td key={index}>{item[head]}</td>;
                             }
