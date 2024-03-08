@@ -41,7 +41,7 @@ const Table = ({ data }) => {
                                 }
                             } else if (head === "members") {
                                 let members = item[head]
-                                    .map((a) => a.name)
+                                    .map((a) => a.membername)
                                     .join(", ");
                                 return <td key={index}>{members}</td>;
                             } else {

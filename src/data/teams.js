@@ -5,16 +5,16 @@ const teams = [
         lead: "Antonio",
         members: [
             {
-                name: "alex",
+                membername: "alex",
                 job: "UX UI designer",
             },
 
             {
-                name: "david",
+                membername: "david",
                 job: "frontend",
             },
             {
-                name: "alex",
+                membername: "alex",
                 job: "backend",
             },
         ],
