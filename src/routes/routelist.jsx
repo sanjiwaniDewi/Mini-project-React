@@ -2,9 +2,12 @@ import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import LeaderDetail from "../pages/LeaderDetail";
-import Project from "../pages/Project";
+import ProjectandTeam from "../pages/ProjectandTeam";
 import NewProject from "../pages/NewProject";
 import ProtectedRoute from "./ProtectedRoute";
+import projects from "../data/project";
+import NewTeam from "../pages/NewTeam";
+import teams from "../data/teams";
 
 const routeslist = [
     {
@@ -37,7 +40,11 @@ const routeslist = [
             {
                 element: (
                     <ProtectedRoute>
-                        <Project />
+                        <ProjectandTeam
+                            title="Project"
+                            data={projects}
+                            route="new-project"
+                        />
                     </ProtectedRoute>
                 ),
                 index: true,
@@ -47,6 +54,32 @@ const routeslist = [
                 element: (
                     <ProtectedRoute>
                         <NewProject />
+                    </ProtectedRoute>
+                ),
+            },
+        ],
+    },
+
+    {
+        path: "/team",
+        children: [
+            {
+                element: (
+                    <ProtectedRoute>
+                        <ProjectandTeam
+                            title="Team"
+                            data={teams}
+                            route="new-team"
+                        />
+                    </ProtectedRoute>
+                ),
+                index: true,
+            },
+            {
+                path: "new-team",
+                element: (
+                    <ProtectedRoute>
+                        <NewTeam />
                     </ProtectedRoute>
                 ),
             },
