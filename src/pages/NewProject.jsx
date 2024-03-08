@@ -2,6 +2,7 @@ import { useState } from "react";
 import Layout from "../components/Layout";
 
 import projects from "../data/project.js";
+import teams from "../data/teams.js";
 
 const NewProject = () => {
     const [newproject, setNewProject] = useState({
@@ -77,10 +78,10 @@ const NewProject = () => {
                     onChange={handleChange}
                 >
                     <option>Team</option>
-                    <option value="Ayam">Ayam</option>
-                    <option value="Kambing">Kambing</option>
-                    <option value="Kerbau">Kerbau</option>
-                    <option value="Sapi">Sapi</option>
+                    {teams.length &&
+                        teams.map((person, index) => (
+                            <option key={index}>{person.name}</option>
+                        ))}
                 </select>
 
                 <input
