@@ -1,6 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Sidebar = ({ handle }) => {
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem("access_token");
+        setTimeout(() => {
+            navigate("/login");
+        }, 1000);
+    };
+
     return (
         <div className="sidebar">
             <div className="inside-sidebar">
@@ -16,10 +24,10 @@ const Sidebar = ({ handle }) => {
                         <Link to="/project">Project</Link>
                     </li>
                     <li>
-                        <Link to="/project">Team</Link>
+                        <Link to="/team">Team</Link>
                     </li>
                     <li>
-                        <Link to="/login">Logout</Link>
+                        <button onClick={handleLogout}>Logout</button>
                     </li>
                 </ul>
             </div>
