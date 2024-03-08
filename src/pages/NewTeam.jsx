@@ -1,8 +1,13 @@
-import { useState } from "react";
-import InputMember from "../components/InputMember";
+import { useEffect, useState } from "react";
+
+import teams from "../data/teams";
+import Layout from "../components/Layout";
+import axios from "axios";
 
 const NewTeam = () => {
     const [showaddmember, setShowaddmember] = useState(false);
+    const [leader, setLeader] = useState([]);
+    const [totalData, setTotalData] = useState("");
 
     const [team, setTeam] = useState({
         id: "",
@@ -18,6 +23,29 @@ const NewTeam = () => {
 
     let uuid = self.crypto.randomUUID();
     let time = new Date().toLocaleDateString();
+
+    const handledataLeader = () => {
+        axios
+
+            .get("https://reqres.in/api/users")
+            .then((res) => setTotalData(res.data.total))
+            .catch((err) => console.log(err));
+
+        axios
+            .get(`https://reqres.in/api/users?per_page=${totalData}`)
+            .then((res) =>
+                setLeader(
+                    res.data.data.map(
+                        (item) => `${item.first_name} ${item.last_name}`
+                    )
+                )
+            )
+            .catch((err) => console.log(err));
+    };
+
+    useEffect(() => {
+        handledataLeader();
+    }, [totalData]);
 
     const handleChangeTeam = (e) => {
         setTeam({
@@ -52,79 +80,90 @@ const NewTeam = () => {
         });
     };
 
-    console.log(team);
+    const handleSubmit = () => {
+        teams.push(team);
+    };
+
+    console.log(teams);
 
     return (
-        <div>
-            <h2>New Team</h2>
-            <div
-                style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    width: "50vw",
-                    gap: 5,
-                }}
-            >
-                <input
-                    name="name"
-                    type="text"
-                    placeholder="Team name"
-                    value={team.name}
-                    onChange={handleChangeTeam}
-                />
-                <select
-                    name="lead"
-                    value={team.lead}
-                    onChange={handleChangeTeam}
+        <Layout>
+            <div>
+                <h2>New Team</h2>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        width: "50vw",
+                        gap: 5,
+                    }}
                 >
-                    <option value="kambing">Kambing</option>
-                    <option value="kucing">Kucing</option>
-                    <option value="kelinci">kelinci</option>
-                </select>
-                <h5>Member</h5>
-                {team.members.length !== 0 &&
-                    team.members.map((item, index) => (
-                        <div
-                            key={index}
-                            style={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: 5,
-                            }}
-                        >
-                            <input value={item.membername} disabled />
-                            <input value={item.job} disabled />
-                            <div>
-                                <button>delete</button>
+                    <input
+                        name="name"
+                        type="text"
+                        placeholder="Team name"
+                        value={team.name}
+                        onChange={handleChangeTeam}
+                    />
+                    <select
+                        name="lead"
+                        value={team.lead}
+                        onChange={handleChangeTeam}
+                    >
+                        {leader &&
+                            leader.map((lead, index) => (
+                                <option value={lead}>{lead}</option>
+                            ))}
+                    </select>
+                    <h5>Member</h5>
+                    {team.members.length !== 0 &&
+                        team.members.map((item, index) => (
+                            <div
+                                key={index}
+                                style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: 5,
+                                }}
+                            >
+                                <input value={item.membername} disabled />
+                                <input value={item.job} disabled />
+                                <div>
+                                    <button>delete</button>
+                                </div>
                             </div>
+                        ))}
+
+                    {showaddmember && (
+                        <div>
+                            <input
+                                name="membername"
+                                type="text"
+                                placeholder="member name"
+                                value={member.membername}
+                                onChange={handleChangeMember}
+                            />
+                            <input
+                                name="job"
+                                type="text"
+                                placeholder="job"
+                                value={member.job}
+                                onChange={handleChangeMember}
+                            />
+
+                            <button onClick={handleAdd}>Add</button>
                         </div>
-                    ))}
+                    )}
+                    {!showaddmember && (
+                        <button onClick={handleAddMember}>Add Member</button>
+                    )}
 
-                {showaddmember && (
-                    <div>
-                        <input
-                            name="membername"
-                            type="text"
-                            placeholder="member name"
-                            value={member.membername}
-                            onChange={handleChangeMember}
-                        />
-                        <input
-                            name="job"
-                            type="text"
-                            placeholder="job"
-                            value={member.job}
-                            onChange={handleChangeMember}
-                        />
-
-                        <button onClick={handleAdd}>Add</button>
-                    </div>
-                )}
-                <button onClick={handleAddMember}>Add Member</button>
-
-                <button>submit</button>
+                    <button type="submit" onClick={handleSubmit}>
+                        submit
+                    </button>
+                </div>
             </div>
-        </div>
+        </Layout>
     );
 };
 
