@@ -39,6 +39,11 @@ const Table = ({ data }) => {
                                 } else {
                                     return <td key={index}>{indexs + 1}</td>;
                                 }
+                            } else if (head === "members") {
+                                let members = item[head]
+                                    .map((a) => a.name)
+                                    .join(", ");
+                                return <td>{members}</td>;
                             } else {
                                 return <td key={index}>{item[head]}</td>;
                             }
