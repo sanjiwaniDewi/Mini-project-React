@@ -8,7 +8,7 @@ const Project = () => {
         <Layout>
             <h2>Project page</h2>
             <Table data={projects} />
-            <Link to="/new-project">Create New Project</Link>
+            <Link to="new-project">Create New Project</Link>
         </Layout>
     );
 };
