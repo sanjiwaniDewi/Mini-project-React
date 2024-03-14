@@ -1,0 +1,23 @@
+.login,
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.middle-section {
+    display: flex;
+    gap: 10;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30vw;
+    gap: 8px;
+}
+.end-section {
+    margin-top: 20px;
+}

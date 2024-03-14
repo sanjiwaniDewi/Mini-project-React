@@ -1,0 +1,86 @@
+.table,
+.pagination {
+    padding: 1.5em;
+    width: 100%;
+}
+
+table {
+    width: 78vw;
+}
+thead,
+th {
+    text-align: start;
+}
+
+tr,
+td,
+th {
+    border-bottom: solid 1px #00000018;
+    padding: 5px 0;
+}
+
+.pagination button {
+    margin: 0 6px;
+}
+
+.link-Login {
+    background-color: #001d3d;
+    width: 50%;
+    border-radius: 100% 0% 100% 0% / 0% 17% 83% 100%;
+    border-top-left-radius: 1.5em;
+    border-bottom-left-radius: 1.5em;
+    height: 100%;
+}
+
+.link-Register {
+    background-color: #001d3d;
+    width: 50%;
+    border-radius: 100% 0% 100% 0% / 79% 100% 0% 21%;
+    height: 100%;
+    border-top-right-radius: 1.5em;
+    border-bottom-right-radius: 1.5em;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 90%;
+}
+.link-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.content h1 {
+    margin-bottom: 0.5rem;
+    font-size: 60px;
+    color: #ffc300;
+}
+
+.content p,
+a {
+    color: #fff;
+}
+
+.content .notif {
+    color: #001d3d;
+}
+
+.content button {
+    width: 318px;
+    padding: 19px 0px;
+    font-size: 15px;
+    background-color: #ffc300;
+    color: #001d3d;
+}
+
+.content button:hover {
+    background-color: #001d3d;
+    color: #ffffffe7;
+}
+
+.form-logreg {
+    width: 50%;
+}

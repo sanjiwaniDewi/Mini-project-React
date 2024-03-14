@@ -1,0 +1,23 @@
+.inputs {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 320px;
+}
+
+.card {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.514);
+    border-radius: 1.5em;
+}
+
+.card-login,
+.card-register {
+    display: flex;
+    width: 50vw;
+    height: 50vh;
+    align-items: center;
+    justify-content: center;
+}
