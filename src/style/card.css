@@ -34,8 +34,8 @@
     .card-login,
     .card-register {
         width: 80vw;
-
-        padding-bottom: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
     }
 
     .card h1 {

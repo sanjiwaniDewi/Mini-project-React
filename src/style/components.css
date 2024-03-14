@@ -93,8 +93,126 @@ a {
 .content button:hover {
     background-color: #001d3d;
     color: #ffffffe7;
+
+    @media (max-width: 1000px) {
+        color: #ffffffe7;
+        background-color: #ffffff4b;
+    }
 }
 
 .form-logreg {
     width: 50%;
+}
+
+/* sidebar style */
+
+.sidebar {
+    flex-direction: column;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-right: 2rem;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    background-color: #001d3d;
+    border-radius: 0rem 5rem 5rem 0;
+}
+.sidebar h2 {
+    margin-top: 0.5rem;
+    font-size: 35px;
+    color: #fff;
+}
+
+.sidebar-menu,
+.sidebar-button {
+    list-style: none;
+    font-size: 20px;
+    margin-bottom: 2.5rem;
+}
+
+.sidebar-menu:first-child {
+    margin-top: 2.3rem;
+}
+
+.sidebar-menu a,
+.sidebar-button {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-button {
+    font-weight: normal;
+    align-items: center;
+    padding-left: 0;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.sidebar-menu a:hover {
+    color: #ffc300;
+}
+
+.sidebar-menu a svg,
+.sidebar-button svg {
+    height: 2rem;
+    width: 2rem;
+    margin-right: 6px;
+}
+.sidebar-nav {
+    padding-left: 0px;
+}
+
+/* .sidebar p,
+.sidebar a {
+    color: #001d3d;
+} */
+.sidebar-button {
+    background-color: #ffffff00 !important;
+}
+.sidebar-btn-close {
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+.sidebar-btn-close:hover {
+    color: #ffc300;
+}
+.sidebar-btn-close svg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+/* sidebar close  */
+.sidebar-close {
+    margin-left: 10px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-radius: 5rem;
+}
+.sidebar-btn-open {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    padding-right: 0;
+}
+.sidebar-btn-open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inside-sidebar-close {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.sidebar-close svg {
+    margin: 0;
+}
+.sidebar-nav-close a svg {
+    margin: 0;
+}
+.sidebar-nav-close a,
+.sidebar-nav-close button {
+    margin-left: 8px;
 }
