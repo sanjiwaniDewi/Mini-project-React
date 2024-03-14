@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../style/components.css";
+import { GiItalia } from "react-icons/gi";
 
 const Table = ({ data }) => {
     let header = [
@@ -16,9 +17,11 @@ const Table = ({ data }) => {
             <table>
                 <thead>
                     <tr>
-                        {header.map((item, index) => (
-                            <th key={index}>{item}</th>
-                        ))}
+                        {header.map((item, index) => {
+                            if (item !== "avatar") {
+                                return <th key={index}>{item}</th>;
+                            }
+                        })}
                     </tr>
                 </thead>
                 <tbody>
@@ -38,10 +41,23 @@ const Table = ({ data }) => {
                                             <Link
                                                 to={`leader-detail/${item["id"]}`}
                                             >
-                                                {item[head]}
+                                                {head === "name" ? (
+                                                    <div className="name-avatar">
+                                                        <img
+                                                            className="table-avatar"
+                                                            src={item["avatar"]}
+                                                            alt="avatar"
+                                                        />
+                                                        {item[head]}
+                                                    </div>
+                                                ) : (
+                                                    item[head]
+                                                )}
                                             </Link>{" "}
                                         </td>
                                     );
+                                } else if (head === "avatar") {
+                                    return;
                                 } else if (head === "No") {
                                     if (typeof item["id"] === "number") {
                                         return (
