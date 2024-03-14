@@ -13,7 +13,11 @@ const Pagination = ({ currentPage, total, handlePagination }) => {
         );
     }
 
-    return <div className="pagination">{pages}</div>;
+    return (
+        <div className="pagination">
+            <div className="pagination-button">{pages}</div>
+        </div>
+    );
 };
 
 export default Pagination;
