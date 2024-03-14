@@ -79,7 +79,15 @@ const FormLogReg = ({ title }) => {
                 }`}
             >
                 {screenSize < 1000 && <h1>{title}</h1>}
-                {notif && <p className="notif">{notif}</p>}
+                {notif && (
+                    <p
+                        className={
+                            screenSize < 1000 ? "notif notif-light" : "notif"
+                        }
+                    >
+                        {notif}
+                    </p>
+                )}
                 <div className="inputs">
                     <input
                         type="email"
