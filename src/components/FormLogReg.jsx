@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "../style/card.css";
+import "../style/components.css";
 
 const FormLogReg = ({ title }) => {
     const [email, setEmail] = useState("");
@@ -33,6 +35,7 @@ const FormLogReg = ({ title }) => {
             .then((res) => {
                 const token = res.data.token;
                 localStorage.setItem("access_token", token);
+                localStorage.setItem("email", payload.email);
                 setLoading(false);
                 setNotif(
                     title === "Login" ? "Login Success" : "Register Success"
@@ -53,31 +56,26 @@ const FormLogReg = ({ title }) => {
     };
 
     return (
-        <div>
-            <h1>{title}</h1>
-            {notif && <p>{notif}</p>}
-            <div>
-                <input
-                    type="email"
-                    placeholder="email"
-                    onChange={handleEmail}
-                />
-                <input
-                    type="password"
-                    placeholder="password"
-                    onChange={handlePassword}
-                />
-            </div>
-            <button type="submit" onClick={handleSubmit}>
-                {loading ? "loading ..." : handleLowerCase(title)}
-            </button>
-
-            {title === "Login" && (
-                <div>
-                    <p>new in Prods ? </p>
-                    <Link to="/register">Register Now</Link>
+        <div className="form-logreg">
+            <div className="content">
+                {notif && <p className="notif">{notif}</p>}
+                <div className="inputs">
+                    <input
+                        type="email"
+                        placeholder="email"
+                        onChange={handleEmail}
+                    />
+                    <input
+                        type="password"
+                        placeholder="password"
+                        onChange={handlePassword}
+                    />
                 </div>
-            )}
+
+                <button type="submit" onClick={handleSubmit}>
+                    {loading ? "loading ..." : handleLowerCase(title)}
+                </button>
+            </div>
         </div>
     );
 };

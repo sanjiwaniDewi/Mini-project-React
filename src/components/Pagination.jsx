@@ -1,3 +1,4 @@
+import "../style/components.css";
 const Pagination = ({ currentPage, total, handlePagination }) => {
     const pages = [];
     for (let index = 1; index <= total; index++) {
@@ -12,7 +13,7 @@ const Pagination = ({ currentPage, total, handlePagination }) => {
         );
     }
 
-    return <div>{pages}</div>;
+    return <div className="pagination">{pages}</div>;
 };
 
 export default Pagination;
