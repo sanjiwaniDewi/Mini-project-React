@@ -1,7 +1,7 @@
 const teams = [
     {
         id: 1,
-        name: "mawar",
+        Team: "mawar",
         lead: "Antonio",
         members: [
             {
