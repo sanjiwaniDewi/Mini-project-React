@@ -3,6 +3,7 @@ import Table from "../components/Table";
 import axios from "axios";
 import Pagination from "../components/Pagination";
 import Layout from "../components/Layout";
+import "../style/pages.css";
 
 const Dashboard = () => {
     const [leader, setLeader] = useState([]);
@@ -49,15 +50,31 @@ const Dashboard = () => {
     }, [pagination.page]);
 
     return (
-        <Layout>
-            <h1> Dashboard</h1>
-            <Table data={leader} />
+        <Layout title="Dashboard">
+            <div className="middle-section">
+                <div className="card" style={{ height: "30vh" }}>
+                    <h2>Project Graph</h2>
+                </div>
+                <div className="aside">
+                    <div className="card" style={{ height: "14vh" }}>
+                        <h2>Top Team</h2>
+                    </div>
+                    <div className="card" style={{ height: "14vh" }}>
+                        <h2>top leader</h2>
+                    </div>
+                </div>
+            </div>
+            <div className="end-section">
+                <div class="card">
+                    <Table data={leader} />
 
-            <Pagination
-                currentPage={pagination.page}
-                total={pagination.total_pages}
-                handlePagination={handlePagination}
-            />
+                    <Pagination
+                        currentPage={pagination.page}
+                        total={pagination.total_pages}
+                        handlePagination={handlePagination}
+                    />
+                </div>
+            </div>
         </Layout>
     );
 };
