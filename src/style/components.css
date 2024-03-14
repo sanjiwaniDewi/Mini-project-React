@@ -1,28 +1,4 @@
-.table,
-.pagination {
-    padding: 1.5em;
-    width: 100%;
-}
-
-table {
-    width: 78vw;
-}
-thead,
-th {
-    text-align: start;
-}
-
-tr,
-td,
-th {
-    border-bottom: solid 1px #00000018;
-    padding: 5px 0;
-}
-
-.pagination button {
-    margin: 0 6px;
-}
-
+/* login register */
 .link-Login {
     background-color: #001d3d;
     width: 50%;
@@ -80,6 +56,9 @@ a {
 
 .content .notif {
     color: #001d3d;
+}
+.content .notif-light {
+    color: #ffc300;
 }
 
 .content button {
@@ -215,4 +194,127 @@ a {
 .sidebar-nav-close a,
 .sidebar-nav-close button {
     margin-left: 8px;
+}
+
+/* navbar */
+
+.disable {
+    display: none;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar-content {
+    padding: 10px 20px;
+    margin: 0px 10px;
+    background-color: #001d3d1c;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+.navbar-togel {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hamburger button {
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.hamburger button svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    color: #001d3d;
+}
+
+.navbar-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.navbar-menu {
+    padding: 5px 0;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #001d3d;
+}
+.navbar-menu a:hover {
+    color: #ffc300;
+}
+.navbar-menu button:hover {
+    background-color: #ffc300;
+    color: #001d3d;
+}
+
+/* table */
+
+.table,
+.pagination {
+    width: 100%;
+}
+
+table {
+    min-width: 100%;
+    padding-left: 1.7em;
+    padding-right: 1.7em;
+    padding-top: 1em;
+}
+
+thead {
+    box-shadow: 0px 5px 12px -4px rgba(0, 29, 61, 0.31);
+}
+
+thead,
+th {
+    padding: 5px 10px;
+    text-align: start;
+}
+
+tr,
+td,
+th {
+    padding: 15px 25px;
+}
+
+td:first-child,
+th:first-child {
+    border-radius: 20px 0 0 20px;
+}
+
+td:last-child,
+th:last-child {
+    border-radius: 0 20px 20px 0;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.table-row {
+    background-color: #f1e1e44f;
+}
+
+.row-even {
+    background-color: #98abee6c;
+}
+
+.pagination-button {
+    padding: 1.2rem;
+}
+.pagination button {
+    margin: 0 6px;
+    padding: 15px 20px;
+}
+.pagination button:disabled {
+    background-color: #001d3d73;
 }
