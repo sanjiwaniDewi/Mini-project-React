@@ -23,7 +23,14 @@ const Table = ({ data }) => {
                 </thead>
                 <tbody>
                     {data.map((item, indexs) => (
-                        <tr key={indexs}>
+                        <tr
+                            key={indexs}
+                            className={
+                                indexs % 2 === 0
+                                    ? "table-row row-even"
+                                    : "table-row row-odd"
+                            }
+                        >
                             {header.map((head, index) => {
                                 if (index === 1) {
                                     return (
