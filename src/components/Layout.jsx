@@ -1,6 +1,8 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import { useState } from "react";
+import SidebarClose from "./SidebarClose";
+import { useNavigate } from "react-router-dom";
 
 const Layout = ({ children, title }) => {
     const [sidebar, setSidebar] = useState(true);
@@ -8,14 +10,26 @@ const Layout = ({ children, title }) => {
     const handleSidebar = () => {
         setSidebar(!sidebar);
     };
+
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem("access_token");
+        setTimeout(() => {
+            navigate("/login");
+        }, 1000);
+    };
     return (
         <div className="layout">
             {sidebar ? (
-                <Sidebar handle={handleSidebar} />
+                <Sidebar
+                    handleShow={handleSidebar}
+                    handleLogout={handleLogout}
+                />
             ) : (
-                <div>
-                    <button onClick={handleSidebar}>Show</button>
-                </div>
+                <SidebarClose
+                    handleShow={handleSidebar}
+                    handleLogout={handleLogout}
+                />
             )}
             <div className="main">
                 <div className="container">
