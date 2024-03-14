@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../style/card.css";
 import "../style/components.css";
@@ -9,8 +9,22 @@ const FormLogReg = ({ title }) => {
     const [password, setPassword] = useState("");
     const [notif, setNotif] = useState("");
     const [loading, setLoading] = useState(false);
+    const [screenSize, setScreenSize] = useState(window.innerWidth);
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const handleResize = () => {
+            setScreenSize(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        // Clean up the event listener when the component unmounts
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     const handleLowerCase = (title) => {
         return title.toLowerCase();
@@ -64,6 +78,7 @@ const FormLogReg = ({ title }) => {
                         : "animate__animated animate__rotateInDownRight"
                 }`}
             >
+                {screenSize < 1000 && <h1>{title}</h1>}
                 {notif && <p className="notif">{notif}</p>}
                 <div className="inputs">
                     <input
@@ -81,6 +96,18 @@ const FormLogReg = ({ title }) => {
                 <button type="submit" onClick={handleSubmit}>
                     {loading ? "loading ..." : handleLowerCase(title)}
                 </button>
+
+                {screenSize && title === "Login" ? (
+                    <div className="link-content">
+                        <p>New in pro.co</p>
+                        <Link to="/register">Register Now</Link>
+                    </div>
+                ) : (
+                    <div className="link-content">
+                        <p>Have an account</p>
+                        <Link to="/login">Login Now</Link>
+                    </div>
+                )}
             </div>
         </div>
     );

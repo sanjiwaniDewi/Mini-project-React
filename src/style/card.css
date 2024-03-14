@@ -11,6 +11,10 @@
     width: 100%;
     background-color: rgba(255, 255, 255, 0.514);
     border-radius: 1.5em;
+
+    @media (max-width: 1000px) {
+        background-color: #001d3d;
+    }
 }
 
 .card-login,
@@ -20,4 +24,22 @@
     height: 50vh;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 1000px) {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1000px) {
+    .card-login,
+    .card-register {
+        width: 80vw;
+
+        padding-bottom: 1rem;
+    }
+
+    .card h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
 }
