@@ -1,11 +1,16 @@
 import FormLogReg from "../components/FormLogReg";
+import LoginRegisterLink from "../components/LoginRegisterLink";
+import "../style/pages.css";
 
-const Register = () => {
+const Login = () => {
     return (
-        <>
-            <FormLogReg title="Login" />
-        </>
+        <main className="login">
+            <div className="card card-login">
+                <LoginRegisterLink title="Login" />
+                <FormLogReg title="Login" />
+            </div>
+        </main>
     );
 };
 
-export default Register;
+export default Login;
