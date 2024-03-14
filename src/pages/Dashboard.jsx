@@ -65,7 +65,7 @@ const Dashboard = () => {
                 </div>
             </div>
             <div className="end-section">
-                <div class="card">
+                <div className="card">
                     <Table data={leader} />
 
                     <Pagination
