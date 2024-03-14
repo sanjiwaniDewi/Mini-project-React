@@ -30,6 +30,7 @@ th {
     border-top-left-radius: 1.5em;
     border-bottom-left-radius: 1.5em;
     height: 100%;
+    z-index: 2;
 }
 
 .link-Register {
@@ -39,6 +40,7 @@ th {
     height: 100%;
     border-top-right-radius: 1.5em;
     border-bottom-right-radius: 1.5em;
+    z-index: 2;
 }
 
 .content {

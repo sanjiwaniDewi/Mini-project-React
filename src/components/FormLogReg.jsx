@@ -56,8 +56,14 @@ const FormLogReg = ({ title }) => {
     };
 
     return (
-        <div className="form-logreg">
-            <div className="content">
+        <div className="form-logreg ">
+            <div
+                className={`content ${
+                    title === "Login"
+                        ? "animate__animated animate__rotateInDownLeft"
+                        : "animate__animated animate__rotateInDownRight"
+                }`}
+            >
                 {notif && <p className="notif">{notif}</p>}
                 <div className="inputs">
                     <input

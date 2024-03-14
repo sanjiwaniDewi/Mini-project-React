@@ -4,22 +4,14 @@ import "../style/components.css";
 import { useEffect, useState } from "react";
 
 const LoginRegisterLink = ({ title }) => {
-    const [animate, setAnimate] = useState(
-        " animate__animated animate__fadeInRight"
-    );
-
-    const handleAnimate = () => {
-        title === "Register"
-            ? setAnimate(" animate__animated animate__fadeInLeft")
-            : "";
-    };
-
-    useEffect(() => {
-        handleAnimate();
-    }, [title]);
-
     return (
-        <div className={"link-" + title + animate}>
+        <div
+            className={`link-${title} ${
+                title === "Login"
+                    ? "animate__animated animate__slideInRight"
+                    : "animate__animated animate__slideInLeft"
+            }`}
+        >
             <div className="content">
                 <h1>{title}</h1>
                 {title === "Login" ? (
