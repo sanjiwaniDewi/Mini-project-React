@@ -513,3 +513,7 @@ td a {
 .content-chart {
     padding: 1rem 0;
 }
+
+.content-chart h2 {
+    padding-left: 1.4rem;
+}
