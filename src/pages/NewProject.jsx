@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
+import { useNavigate } from "react-router-dom";
 
 import projects from "../data/project.js";
 import teams from "../data/teams.js";
@@ -15,6 +16,8 @@ const NewProject = () => {
         end: "",
         detail: "",
     });
+
+    const navigate = useNavigate();
 
     let uuid = self.crypto.randomUUID();
     let start = new Date().toLocaleDateString();
@@ -54,12 +57,15 @@ const NewProject = () => {
 
         setNewProject({
             id: "",
-            name: "",
+            team: "",
             team: "",
             start: "",
             end: "",
             detail: "",
         });
+        setTimeout(() => {
+            navigate("/project");
+        }, 1500);
     };
 
     return (
