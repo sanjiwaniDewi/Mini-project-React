@@ -5,8 +5,7 @@ import projects from "../data/project";
 
 const ProjectandTeam = ({ title, data, route }) => {
     return (
-        <Layout>
-            <h2>{title} page</h2>
+        <Layout title={`${title} Page`}>
             <Table data={data} />
             <Link to={route}>Create New {title}</Link>
         </Layout>

@@ -34,8 +34,7 @@ const LeaderDetail = () => {
     }, []);
 
     return (
-        <Layout>
-            <h2>Detail Leader</h2>
+        <Layout title="Detail Leader">
             {loading ? (
                 <h2>Loading ....</h2>
             ) : notif ? (

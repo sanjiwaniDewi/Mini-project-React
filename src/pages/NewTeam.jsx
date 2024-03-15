@@ -87,9 +87,8 @@ const NewTeam = () => {
     console.log(teams);
 
     return (
-        <Layout>
+        <Layout title="New Team">
             <div>
-                <h2>New Team</h2>
                 <div
                     style={{
                         display: "flex",
