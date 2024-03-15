@@ -132,6 +132,10 @@ a {
     padding-top: 0;
 }
 
+.sidebar-button:hover {
+    color: #ffc300;
+}
+
 .sidebar-menu a:hover {
     color: #ffc300;
 }
@@ -229,6 +233,10 @@ a {
     background-color: transparent;
     border-radius: 0;
 }
+.hamburger button:hover {
+    background-color: transparent;
+    transform: scale(1.2);
+}
 
 .hamburger button svg {
     height: 1.5rem;
@@ -271,6 +279,8 @@ table {
     padding-left: 1.7em;
     padding-right: 1.7em;
     padding-top: 1em;
+    border-collapse: separate;
+    border-spacing: 0 8px;
 }
 
 thead {
@@ -299,9 +309,8 @@ th:last-child {
     border-radius: 0 20px 20px 0;
 }
 
-table {
-    border-collapse: separate;
-    border-spacing: 0 8px;
+table tbody td a:hover {
+    color: #ffc300;
 }
 
 .table-row {

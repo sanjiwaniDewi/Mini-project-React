@@ -66,6 +66,14 @@ button {
     color: rgba(247, 250, 250, 0.884);
 }
 
+button:hover {
+    background-color: #ffc300;
+    color: #001d3d;
+    transform: scale(1.1);
+}
+a:hover {
+    transform: scale(1.1);
+}
 select {
     -moz-appearance: none !important;
     -webkit-appearance: none !important;
