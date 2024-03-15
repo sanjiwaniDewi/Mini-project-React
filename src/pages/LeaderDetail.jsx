@@ -36,27 +36,34 @@ const LeaderDetail = () => {
     return (
         <Layout title="Detail Leader">
             {loading ? (
-                <h2>Loading ....</h2>
+                <div className="content-main content-detail detail-loading">
+                    <h2>Loading ....</h2>
+                </div>
             ) : notif ? (
-                <p>{notif}</p>
+                <div className="content-main content-detail detail-loading">
+                    <h2>{notif}</h2>
+                </div>
             ) : (
-                <div className="leader-detail">
-                    <img
-                        className="leader-detail-avatar"
-                        src={leaderData.avatar}
-                        alt="avatar"
-                    />
-                    <div className="card card-leader">
-                        <div className="content-leader">
-                            <h1>
-                                {leaderData.first_name} {leaderData.last_name}
-                            </h1>
-                            <p className="leader-email">
-                                email: {leaderData.email}
-                            </p>
+                <div className="content-main content-detail">
+                    <div className="leader-detail">
+                        <img
+                            className="leader-detail-avatar"
+                            src={leaderData.avatar}
+                            alt="avatar"
+                        />
+                        <div className="card card-leader">
+                            <div className="content-leader">
+                                <h1>
+                                    {leaderData.first_name}{" "}
+                                    {leaderData.last_name}
+                                </h1>
+                                <p className="leader-email">
+                                    email: {leaderData.email}
+                                </p>
 
-                            <ExperiencesAndSkils />
-                            <Achivement />
+                                <ExperiencesAndSkils />
+                                <Achivement />
+                            </div>
                         </div>
                     </div>
                 </div>

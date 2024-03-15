@@ -463,7 +463,14 @@ td a {
     background-color: #ffc300;
     margin-bottom: 2rem;
 }
-@media only screen and(max-width:800) {
+.content-detail {
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+}
+
+.detail-loading {
+    align-items: center;
 }
 
 /* img title layout */
