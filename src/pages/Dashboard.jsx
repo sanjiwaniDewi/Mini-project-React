@@ -24,6 +24,7 @@ const Dashboard = () => {
                         id: item.id,
                         name: `${item.first_name} ${item.last_name}`,
                         email: item.email,
+                        avatar: item.avatar,
                     };
                     setPagination({
                         page: res.data.page,
