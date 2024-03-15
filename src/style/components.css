@@ -517,3 +517,38 @@ td a {
 .content-chart h2 {
     padding-left: 1.4rem;
 }
+
+/* project and team form */
+
+/* project and team */
+.content-main {
+    width: 80vw;
+}
+
+.button-create {
+    display: flex;
+    justify-content: end;
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+
+.button-create button {
+    padding: 16px 20px;
+}
+
+.form {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-top: 2rem;
+    @media (max-width: 700px) {
+        width: 80vw;
+    }
+}
+
+.content-form {
+    display: flex;
+    justify-content: center;
+}
