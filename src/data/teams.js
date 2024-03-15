@@ -1,7 +1,7 @@
 const teams = [
     {
         id: 1,
-        Team: "mawar",
+        team: "mawar",
         lead: "Antonio",
         members: [
             {
@@ -18,7 +18,7 @@ const teams = [
                 job: "backend",
             },
         ],
-        createdAt: "08-02-2024",
+        createdAt: "8/02/2024",
     },
 ];
 
