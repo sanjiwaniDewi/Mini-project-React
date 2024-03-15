@@ -6,6 +6,9 @@ import SidebarClose from "./SidebarClose";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 
+import { RiNotification3Line } from "react-icons/ri";
+import UserImg from "./UsersImg";
+
 const Layout = ({ children, title }) => {
     const [sidebar, setSidebar] = useState(true);
 
@@ -77,6 +80,10 @@ const Layout = ({ children, title }) => {
                         }
                     >
                         <h1>{title}</h1>
+                        <div className="layout-icons">
+                            <RiNotification3Line />
+                            <UserImg />
+                        </div>
                     </div>
 
                     <div>{children || <Outlet />}</div>
