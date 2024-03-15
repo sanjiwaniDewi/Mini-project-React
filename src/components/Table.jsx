@@ -10,7 +10,7 @@ const Table = ({ data }) => {
                 .join(",")
                 .split(",")
         ),
-    ].map((item) => (item === "id" ? "No" : item));
+    ].map((item) => (item === "id" ? "no" : item));
 
     return (
         <div className="table">
@@ -58,7 +58,7 @@ const Table = ({ data }) => {
                                     );
                                 } else if (head === "avatar") {
                                     return;
-                                } else if (head === "No") {
+                                } else if (head === "no") {
                                     if (typeof item["id"] === "number") {
                                         return (
                                             <td key={index}>{item["id"]}</td>
