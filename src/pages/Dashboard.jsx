@@ -4,6 +4,8 @@ import axios from "axios";
 import Pagination from "../components/Pagination";
 import Layout from "../components/Layout";
 import "../style/pages.css";
+import TopTeamOrLeader from "../components/TopTeamOrLeader";
+import LineChart from "../components/LineChart";
 
 const Dashboard = () => {
     const [leader, setLeader] = useState([]);
@@ -53,15 +55,25 @@ const Dashboard = () => {
     return (
         <Layout title="Dashboard">
             <div className="middle-section">
-                <div className="card" style={{ height: "30vh" }}>
+                <div className="card">
                     <h2>Project Graph</h2>
+                    <LineChart />
                 </div>
                 <div className="aside">
-                    <div className="card" style={{ height: "14vh" }}>
-                        <h2>Top Team</h2>
+                    <div className="card">
+                        <div className="content content-aside">
+                            <h2>Top Team</h2>
+                            <TopTeamOrLeader name="mawar" projects="105" />
+                        </div>
                     </div>
-                    <div className="card" style={{ height: "14vh" }}>
-                        <h2>top leader</h2>
+                    <div className="card">
+                        <div className="content content-aside">
+                            <h2>Top Leader</h2>
+                            <TopTeamOrLeader
+                                name="Michael Lawson"
+                                projects="105"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
