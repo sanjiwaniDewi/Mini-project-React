@@ -4,6 +4,8 @@ import teams from "../data/teams";
 import Layout from "../components/Layout";
 import axios from "axios";
 
+import "../style/pages.css";
+
 const NewTeam = () => {
     const [showaddmember, setShowaddmember] = useState(false);
     const [leader, setLeader] = useState([]);
@@ -88,15 +90,8 @@ const NewTeam = () => {
 
     return (
         <Layout title="New Team">
-            <div>
-                <div
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        width: "50vw",
-                        gap: 5,
-                    }}
-                >
+            <div className="content-main content-form">
+                <div className="form">
                     <input
                         name="name"
                         type="text"
