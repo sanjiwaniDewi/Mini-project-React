@@ -62,7 +62,6 @@ const NewProject = () => {
 
     return (
         <Layout title="New Project">
-            <h2>New Project</h2>
             <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
                 <input
                     type="text"
