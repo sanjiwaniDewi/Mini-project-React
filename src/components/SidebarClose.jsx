@@ -5,7 +5,7 @@ import { RiTeamLine } from "react-icons/ri";
 import { MdLogout } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const SidebarClose = ({ handleShow, handleLogout }) => {
+const SidebarClose = ({ handleShow, handleShowModal }) => {
     return (
         <div className="sidebar sidebar-close">
             <div className="inside-sidebar-close">
@@ -35,7 +35,7 @@ const SidebarClose = ({ handleShow, handleLogout }) => {
                     <li className="sidebar-menu sidebar-menu-close">
                         <button
                             className="sidebar-button"
-                            onClick={handleLogout}
+                            onClick={handleShowModal}
                         >
                             <MdLogout alt="Logout" />
                         </button>

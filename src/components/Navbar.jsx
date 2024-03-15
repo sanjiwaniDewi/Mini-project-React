@@ -3,7 +3,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ handleLogout }) => {
+const Navbar = ({ handleShowModal }) => {
     const [showMenu, setShowMenu] = useState(false);
 
     const handleShowMenu = () => {
@@ -38,7 +38,7 @@ const Navbar = ({ handleLogout }) => {
                             <Link to="/team">Team</Link>
                         </li>
                         <li className="navbar-menu">
-                            <button onClick={handleLogout}>Logout</button>
+                            <button onClick={handleShowModal}>Logout</button>
                         </li>
                     </ul>
                 </div>

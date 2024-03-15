@@ -8,6 +8,7 @@ import Navbar from "./Navbar";
 
 import { RiNotification3Line } from "react-icons/ri";
 import UserImg from "./UsersImg";
+import LogoutModal from "./LogoutModal";
 
 const Layout = ({ children, title }) => {
     const [sidebar, setSidebar] = useState(true);
@@ -15,6 +16,8 @@ const Layout = ({ children, title }) => {
     const [screenSize, setScreenSize] = useState(window.innerWidth);
 
     const [navbar, setNavbar] = useState(false);
+
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
@@ -49,27 +52,38 @@ const Layout = ({ children, title }) => {
 
     const handleLogout = () => {
         localStorage.removeItem("access_token");
+        localStorage.removeItem("email");
         setTimeout(() => {
             navigate("/login");
         }, 1000);
     };
+
+    const handleShowModal = () => {
+        setShowModal(!showModal);
+    };
     return (
         <main>
+            {showModal && (
+                <LogoutModal
+                    handleShowModal={handleShowModal}
+                    handleLogout={handleLogout}
+                />
+            )}
             <div className={navbar ? "layout layout-navbar" : "layout"}>
                 {screenSize > 800 ? (
                     sidebar ? (
                         <Sidebar
                             handleShow={handleSidebar}
-                            handleLogout={handleLogout}
+                            handleShowModal={handleShowModal}
                         />
                     ) : (
                         <SidebarClose
                             handleShow={handleSidebar}
-                            handleLogout={handleLogout}
+                            handleShowModal={handleShowModal}
                         />
                     )
                 ) : (
-                    <Navbar handleLogout={handleLogout} />
+                    <Navbar handleShowModal={handleShowModal} />
                 )}
             </div>
 

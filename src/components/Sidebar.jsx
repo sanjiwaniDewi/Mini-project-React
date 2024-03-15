@@ -7,7 +7,7 @@ import { GrClose } from "react-icons/gr";
 
 import "../style/components.css";
 
-const Sidebar = ({ handleShow, handleLogout }) => {
+const Sidebar = ({ handleShow, handleShowModal }) => {
     return (
         <div className="sidebar ">
             <div className="inside-sidebar">
@@ -44,7 +44,7 @@ const Sidebar = ({ handleShow, handleLogout }) => {
                     <li className="sidebar-menu">
                         <button
                             className="sidebar-button"
-                            onClick={handleLogout}
+                            onClick={handleShowModal}
                         >
                             <MdLogout />
                             Logout
