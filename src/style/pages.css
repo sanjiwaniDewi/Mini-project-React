@@ -8,14 +8,14 @@
 
 .middle-section {
     display: flex;
-    gap: 10;
+    gap: 1rem;
 }
 
 .aside {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 30vw;
+    width: 20vw;
     gap: 8px;
 }
 .end-section {
@@ -28,4 +28,19 @@
 }
 .content-aside h2 {
     margin-bottom: 8px;
+}
+
+.card-chart {
+    width: 60vw !important;
+    padding-bottom: 1rem;
+}
+
+.content-chart {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content-chart {
+    display: block;
 }

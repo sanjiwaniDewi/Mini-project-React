@@ -55,12 +55,14 @@ const Dashboard = () => {
     return (
         <Layout title="Dashboard">
             <div className="middle-section">
-                <div className="card">
-                    <h2>Project Graph</h2>
-                    <LineChart />
+                <div className="card card-chart">
+                    <div className="content content-chart">
+                        <h2>Progress Chart</h2>
+                        <LineChart />
+                    </div>
                 </div>
                 <div className="aside">
-                    <div className="card">
+                    <div className="card card-aside">
                         <div className="content content-aside">
                             <h2>Top Team</h2>
                             <TopTeamOrLeader name="mawar" projects="105" />

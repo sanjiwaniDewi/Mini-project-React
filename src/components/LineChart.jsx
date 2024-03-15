@@ -2,6 +2,8 @@ import progressProject from "../data/progressProject.json";
 import { Chart } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 
+import "../style/components.css";
+
 const LineChart = () => {
     return (
         <div className="progress-chart">
@@ -28,6 +30,15 @@ const LineChart = () => {
                             borderColor: "#ffd60a",
                         },
                     ],
+                }}
+                options={{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    elements: {
+                        line: {
+                            tension: 0.2,
+                        },
+                    },
                 }}
             />
         </div>
