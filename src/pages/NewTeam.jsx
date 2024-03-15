@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import axios from "axios";
 
 import "../style/pages.css";
+import { constant } from "../environments/constant";
 
 const NewTeam = () => {
     const [showaddmember, setShowaddmember] = useState(false);
@@ -29,12 +30,12 @@ const NewTeam = () => {
     const handledataLeader = () => {
         axios
 
-            .get("https://reqres.in/api/users")
+            .get(constant.user)
             .then((res) => setTotalData(res.data.total))
             .catch((err) => console.log(err));
 
         axios
-            .get(`https://reqres.in/api/users?per_page=${totalData}`)
+            .get(`${constant.user}?per_page=${totalData}`)
             .then((res) =>
                 setLeader(
                     res.data.data.map(

@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import "../style/pages.css";
 import TopTeamOrLeader from "../components/TopTeamOrLeader";
 import LineChart from "../components/LineChart";
+import { constant } from "../environments/constant";
 
 const Dashboard = () => {
     const [leader, setLeader] = useState([]);
@@ -17,28 +18,26 @@ const Dashboard = () => {
     });
 
     const handleLeaderData = () => {
-        axios
-            .get(`https://reqres.in/api/users?page=${pagination.page}`)
-            .then((res) => {
-                const dataLead = [];
-                res.data.data.map((item) => {
-                    const data = {
-                        id: item.id,
-                        name: `${item.first_name} ${item.last_name}`,
-                        email: item.email,
-                        avatar: item.avatar,
-                    };
-                    setPagination({
-                        page: res.data.page,
-                        per_page: res.data.per_page,
-                        total: res.data.total,
-                        total_pages: res.data.total_pages,
-                    });
-
-                    dataLead.push(data);
+        axios.get(`${constant.user}?page=${pagination.page}`).then((res) => {
+            const dataLead = [];
+            res.data.data.map((item) => {
+                const data = {
+                    id: item.id,
+                    name: `${item.first_name} ${item.last_name}`,
+                    email: item.email,
+                    avatar: item.avatar,
+                };
+                setPagination({
+                    page: res.data.page,
+                    per_page: res.data.per_page,
+                    total: res.data.total,
+                    total_pages: res.data.total_pages,
                 });
-                setLeader(dataLead);
+
+                dataLead.push(data);
             });
+            setLeader(dataLead);
+        });
     };
 
     const handlePagination = (num) => {

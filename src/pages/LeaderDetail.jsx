@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import "../style/components.css";
 import ExperiencesAndSkils from "../components/ExperiencesAndSkils";
 import Achivement from "../components/Achivement";
+import { constant } from "../environments/constant";
 
 const LeaderDetail = () => {
     const [leaderData, setLeaderData] = useState({});
@@ -16,7 +17,7 @@ const LeaderDetail = () => {
     const getLeaderDetail = () => {
         setLoading(true);
         axios
-            .get(`https://reqres.in/api/users/${id}`)
+            .get(`${constant.user}/${id}`)
             .then((res) => {
                 setLeaderData(res.data.data);
                 setLoading(false);

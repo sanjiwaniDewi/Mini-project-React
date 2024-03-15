@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../style/card.css";
 import "../style/components.css";
+import { constant } from "../environments/constant";
 
 const FormLogReg = ({ title }) => {
     const [email, setEmail] = useState("");
@@ -45,7 +46,12 @@ const FormLogReg = ({ title }) => {
         };
         setLoading(true);
         axios
-            .post(`https://reqres.in/api/${handleLowerCase(title)}`, payload)
+            .post(
+                handleLowerCase(title) === "login"
+                    ? constant.login
+                    : constant.register,
+                payload
+            )
             .then((res) => {
                 const token = res.data.token;
                 localStorage.setItem("access_token", token);

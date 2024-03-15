@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+import { constant } from "../environments/constant";
+
 const UserImg = () => {
     const [email, setEmail] = useState(localStorage.getItem("email"));
 
@@ -11,7 +13,7 @@ const UserImg = () => {
         // setUser(users.filter((item) => item.email === email));
         axios
 
-            .get("https://reqres.in/api/users")
+            .get(constant.user)
             .then((res) => setTotalData(res.data.total))
             .catch((err) => console.log(err));
     };
@@ -24,7 +26,7 @@ const UserImg = () => {
 
     const handleUser = () => {
         axios
-            .get(`https://reqres.in/api/users?per_page=${totalData}`)
+            .get(`${constant.user}?per_page=${totalData}`)
             .then((res) =>
                 setUser(...res.data.data.filter((item) => item.email === email))
             )
