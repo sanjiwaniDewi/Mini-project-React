@@ -10,7 +10,7 @@ import "../style/pages.css";
 const NewProject = () => {
     const [newproject, setNewProject] = useState({
         id: "",
-        name: "",
+        project: "",
         team: "",
         start: "",
         end: "",
@@ -57,7 +57,7 @@ const NewProject = () => {
 
         setNewProject({
             id: "",
-            team: "",
+            project: "",
             team: "",
             start: "",
             end: "",
@@ -74,9 +74,9 @@ const NewProject = () => {
                 <div className="form">
                     <input
                         type="text"
-                        name="name"
+                        name="project"
                         placeholder="project name"
-                        value={newproject.name}
+                        value={newproject.project}
                         onChange={handleChange}
                     />
                     <select
