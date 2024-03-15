@@ -54,23 +54,26 @@ const Layout = ({ children, title }) => {
         }, 1000);
     };
     return (
-        <div className={navbar ? "layout layout-navbar" : "layout"}>
-            {screenSize > 800 ? (
-                sidebar ? (
-                    <Sidebar
-                        handleShow={handleSidebar}
-                        handleLogout={handleLogout}
-                    />
+        <main>
+            <div className={navbar ? "layout layout-navbar" : "layout"}>
+                {screenSize > 800 ? (
+                    sidebar ? (
+                        <Sidebar
+                            handleShow={handleSidebar}
+                            handleLogout={handleLogout}
+                        />
+                    ) : (
+                        <SidebarClose
+                            handleShow={handleSidebar}
+                            handleLogout={handleLogout}
+                        />
+                    )
                 ) : (
-                    <SidebarClose
-                        handleShow={handleSidebar}
-                        handleLogout={handleLogout}
-                    />
-                )
-            ) : (
-                <Navbar handleLogout={handleLogout} />
-            )}
-            <div className="main">
+                    <Navbar handleLogout={handleLogout} />
+                )}
+            </div>
+
+            <div className={sidebar ? "main main-sidebar" : "main"}>
                 <div className="container">
                     <div
                         className={
@@ -89,7 +92,7 @@ const Layout = ({ children, title }) => {
                     <div>{children || <Outlet />}</div>
                 </div>
             </div>
-        </div>
+        </main>
     );
 };
 
