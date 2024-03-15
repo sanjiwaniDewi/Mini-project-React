@@ -11,10 +11,6 @@
     width: 100%;
     background-color: rgba(255, 255, 255, 0.514);
     border-radius: 1.5em;
-
-    @media (max-width: 1000px) {
-        background-color: #001d3d;
-    }
 }
 
 .card-login,
@@ -27,6 +23,7 @@
 
     @media (max-width: 1000px) {
         flex-direction: column;
+        background-color: #001d3d;
     }
 }
 
