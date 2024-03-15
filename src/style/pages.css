@@ -21,3 +21,11 @@
 .end-section {
     margin-top: 20px;
 }
+
+.content-aside {
+    display: block;
+    padding: 10px 25px;
+}
+.content-aside h2 {
+    margin-bottom: 8px;
+}

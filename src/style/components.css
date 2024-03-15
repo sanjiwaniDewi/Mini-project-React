@@ -324,6 +324,10 @@ td a {
     color: #001d3d;
 }
 
+.table {
+    overflow-x: auto;
+}
+
 .pagination-button {
     padding: 1.2rem;
 }
@@ -349,6 +353,7 @@ td a {
     margin-left: 6rem;
     height: auto;
     border-radius: 0.8rem !important;
+    border: solid 1px #001d3d3b;
     @media (max-width: 800px) {
         margin-left: 0;
         width: 420px !important;
@@ -362,6 +367,7 @@ td a {
     margin-right: 40rem;
     object-fit: cover;
     border-radius: 0.5rem;
+    border: solid 2px #001d3d44;
     @media (max-width: 800px) {
         margin-right: 0;
         border-radius: 100%;
@@ -382,8 +388,8 @@ td a {
 }
 .content-leader .leader-email {
     font-size: 15px;
-    color: #001d3d79;
-    border: solid 2px #001d3d;
+    color: #001d3dbb;
+    border: solid 2px #001d3d54;
     padding: 5px 10px;
     width: fit-content;
     border-radius: 2rem;
@@ -463,4 +469,22 @@ td a {
     width: 40px;
     object-fit: cover;
     border-radius: 100%;
+}
+
+/* aside top team or leader */
+.top-team-leader p {
+    color: #001d3d;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.top-team-leader {
+    background-color: #ffc4003a;
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 25px;
 }
