@@ -484,7 +484,6 @@ td a {
 
 .top-team-leader {
     background-color: #ffc4003a;
-    width: 85%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -499,6 +498,9 @@ td a {
     padding-left: 1.5rem;
     width: 56vw;
     height: 270px;
+    @media (max-width: 800px) {
+        width: 80vw;
+    }
 }
 
 .content-chart {

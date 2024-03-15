@@ -9,6 +9,7 @@
 .middle-section {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .aside {
@@ -17,6 +18,11 @@
     justify-content: center;
     width: 20vw;
     row-gap: 1rem;
+    @media (max-width: 800px) {
+        width: 100%;
+        flex-direction: row;
+        gap: 1rem;
+    }
 }
 .end-section {
     margin-top: 20px;
@@ -33,6 +39,10 @@
 .card-chart {
     width: 60vw !important;
     padding-bottom: 1rem;
+
+    @media (max-width: 800px) {
+        width: 100% !important;
+    }
 }
 
 .content-chart {
