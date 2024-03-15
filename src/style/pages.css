@@ -16,7 +16,7 @@
     flex-direction: column;
     justify-content: center;
     width: 20vw;
-    gap: 8px;
+    row-gap: 1rem;
 }
 .end-section {
     margin-top: 20px;
@@ -24,7 +24,7 @@
 
 .content-aside {
     display: block;
-    padding: 10px 25px;
+    padding: 0.8rem 25px;
 }
 .content-aside h2 {
     margin-bottom: 8px;
