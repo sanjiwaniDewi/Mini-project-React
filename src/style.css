@@ -67,13 +67,31 @@ select {
 
 .layout-title {
     margin: 5vh 0vw;
-    padding: 20px 0px;
+    padding: 10px 0px;
     padding-left: 1.5em;
     background-color: rgba(255, 255, 255, 0.514);
     width: 78vw;
     border-radius: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1.5em;
+}
+
+.layout-title h1 {
+    font-size: 26px;
 }
 
 .layout-title-navbar {
     margin-top: 10vh;
+}
+.layout-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.layout-icons svg {
+    width: 25px;
+    height: 25px;
 }

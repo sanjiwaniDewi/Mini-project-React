@@ -455,3 +455,12 @@ td a {
 }
 @media only screen and(max-width:800) {
 }
+
+/* img title layout */
+
+.user {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 100%;
+}
