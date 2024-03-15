@@ -2,6 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Layout from "../components/Layout";
+import "../style/components.css";
+import ExperiencesAndSkils from "../components/ExperiencesAndSkils";
+import Achivement from "../components/Achivement";
 
 const LeaderDetail = () => {
     const [leaderData, setLeaderData] = useState({});
@@ -38,12 +41,25 @@ const LeaderDetail = () => {
             ) : notif ? (
                 <p>{notif}</p>
             ) : (
-                <div>
-                    <img src={leaderData.avatar} alt="avatar" />
-                    <h3>
-                        {leaderData.first_name} {leaderData.last_name}
-                    </h3>
-                    <p>{leaderData.email}</p>
+                <div className="leader-detail">
+                    <img
+                        className="leader-detail-avatar"
+                        src={leaderData.avatar}
+                        alt="avatar"
+                    />
+                    <div className="card card-leader">
+                        <div className="content-leader">
+                            <h1>
+                                {leaderData.first_name} {leaderData.last_name}
+                            </h1>
+                            <p className="leader-email">
+                                email: {leaderData.email}
+                            </p>
+
+                            <ExperiencesAndSkils />
+                            <Achivement />
+                        </div>
+                    </div>
                 </div>
             )}
         </Layout>
