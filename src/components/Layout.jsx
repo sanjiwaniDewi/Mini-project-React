@@ -73,7 +73,7 @@ const Layout = ({ children, title }) => {
                 )}
             </div>
 
-            <div className={sidebar ? "main main-sidebar" : "main"}>
+            <div className={sidebar && !navbar ? "main main-sidebar" : "main"}>
                 <div className="container">
                     <div
                         className={
