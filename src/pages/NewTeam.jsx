@@ -6,6 +6,7 @@ import axios from "axios";
 
 import "../style/pages.css";
 import { constant } from "../environments/constant";
+import { useNavigate } from "react-router-dom";
 
 const NewTeam = () => {
     const [showaddmember, setShowaddmember] = useState(false);
@@ -23,6 +24,8 @@ const NewTeam = () => {
         membername: "",
         job: "",
     });
+
+    const navigate = useNavigate();
 
     let uuid = self.crypto.randomUUID();
     let time = new Date().toLocaleDateString();
@@ -85,6 +88,9 @@ const NewTeam = () => {
 
     const handleSubmit = () => {
         teams.push(team);
+        setTimeout(() => {
+            navigate("/team");
+        }, 1500);
     };
 
     return (
