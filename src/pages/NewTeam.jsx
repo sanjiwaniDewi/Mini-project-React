@@ -14,7 +14,7 @@ const NewTeam = () => {
 
     const [team, setTeam] = useState({
         id: "",
-        name: "",
+        team: "",
         lead: "",
         members: [],
         createdAt: "",
@@ -87,17 +87,15 @@ const NewTeam = () => {
         teams.push(team);
     };
 
-    console.log(teams);
-
     return (
         <Layout title="New Team">
             <div className="content-main content-form">
                 <div className="form">
                     <input
-                        name="name"
+                        name="team"
                         type="text"
                         placeholder="Team name"
-                        value={team.name}
+                        value={team.team}
                         onChange={handleChangeTeam}
                     />
                     <select
