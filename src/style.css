@@ -69,7 +69,7 @@ button {
 button:hover {
     background-color: #ffc300;
     color: #001d3d;
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 a:hover {
     transform: scale(1.1);
