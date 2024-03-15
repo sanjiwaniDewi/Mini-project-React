@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import users from "../data/users";
 import axios from "axios";
 
 const UserImg = () => {
