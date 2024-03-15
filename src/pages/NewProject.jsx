@@ -4,6 +4,8 @@ import Layout from "../components/Layout";
 import projects from "../data/project.js";
 import teams from "../data/teams.js";
 
+import "../style/pages.css";
+
 const NewProject = () => {
     const [newproject, setNewProject] = useState({
         id: "",
@@ -62,48 +64,50 @@ const NewProject = () => {
 
     return (
         <Layout title="New Project">
-            <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="project name"
-                    value={newproject.name}
-                    onChange={handleChange}
-                />
-                <select
-                    name="team"
-                    id="team"
-                    value={newproject.team}
-                    onChange={handleChange}
-                >
-                    <option>Team</option>
-                    {teams.length &&
-                        teams.map((person, index) => (
-                            <option key={index}>{person.name}</option>
-                        ))}
-                </select>
+            <div className="content-main content-form">
+                <div className="form">
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="project name"
+                        value={newproject.name}
+                        onChange={handleChange}
+                    />
+                    <select
+                        name="team"
+                        id="team"
+                        value={newproject.team}
+                        onChange={handleChange}
+                    >
+                        <option>Team</option>
+                        {teams.length &&
+                            teams.map((person, index) => (
+                                <option key={index}>{person.Team}</option>
+                            ))}
+                    </select>
 
-                <input
-                    name="end"
-                    type="date"
-                    value={newproject.date}
-                    onChange={handleChange}
-                />
+                    <input
+                        name="end"
+                        type="date"
+                        value={newproject.date}
+                        onChange={handleChange}
+                    />
 
-                <textarea
-                    name="detail"
-                    id="detail"
-                    cols="30"
-                    rows="10"
-                    placeholder="Description"
-                    value={newproject.detail}
-                    onChange={handleChange}
-                ></textarea>
+                    <textarea
+                        name="detail"
+                        id="detail"
+                        cols="30"
+                        rows="10"
+                        placeholder="Description"
+                        value={newproject.detail}
+                        onChange={handleChange}
+                    ></textarea>
 
-                <input type="file" />
-                <button type="submit" onClick={handleSubmit}>
-                    Submit
-                </button>
+                    <input type="file" />
+                    <button type="submit" onClick={handleSubmit}>
+                        Submit
+                    </button>
+                </div>
             </div>
         </Layout>
     );
