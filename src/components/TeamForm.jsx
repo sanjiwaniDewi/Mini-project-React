@@ -53,6 +53,7 @@ const TeamForm = () => {
     }, [totalData]);
 
     const handleChangeTeam = (e) => {
+        setNotif("");
         setTeam({
             ...team,
             id: uuid,
@@ -63,6 +64,7 @@ const TeamForm = () => {
     };
 
     const handleChangeMember = (e) => {
+        setNotif("");
         setMember({
             ...member,
             [e.target.name]: e.target.value,
@@ -70,6 +72,7 @@ const TeamForm = () => {
     };
 
     const handleAddMember = () => {
+        setNotif("");
         setShowaddmember(!showaddmember);
         setMember({
             membername: "",
@@ -78,6 +81,7 @@ const TeamForm = () => {
     };
 
     const handleAdd = () => {
+        setNotif("");
         setShowaddmember(!showaddmember);
         setTeam({
             ...team,
