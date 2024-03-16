@@ -10,11 +10,12 @@ const TeamForm = () => {
     const [showaddmember, setShowaddmember] = useState(false);
     const [leader, setLeader] = useState([]);
     const [totalData, setTotalData] = useState("");
+    const [notif, setNotif] = useState("");
 
     const [team, setTeam] = useState({
         id: "",
         team: "",
-        lead: "",
+        lead: "Leader",
         members: [],
         createdAt: "",
     });
@@ -85,14 +86,26 @@ const TeamForm = () => {
     };
 
     const handleSubmit = () => {
-        teams.push(team);
-        setTimeout(() => {
-            navigate("/team");
-        }, 1500);
+        if (team.lead !== "Leader" && team.team && team.members.length > 0) {
+            teams.push(team);
+            setTeam({
+                id: "",
+                team: "",
+                lead: "Leader",
+                members: [],
+                createdAt: "",
+            });
+            setTimeout(() => {
+                navigate("/team");
+            }, 1500);
+        } else {
+            setNotif("compleate the fields");
+        }
     };
 
     return (
         <div className="form">
+            {notif && <p className="notif">{notif}</p>}
             <input
                 name="team"
                 type="text"
@@ -101,6 +114,7 @@ const TeamForm = () => {
                 onChange={handleChangeTeam}
             />
             <select name="lead" value={team.lead} onChange={handleChangeTeam}>
+                <option>Leader</option>
                 {leader &&
                     leader.map((lead, index) => (
                         <option value={lead}>{lead}</option>
