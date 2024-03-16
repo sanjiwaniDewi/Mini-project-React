@@ -9,11 +9,12 @@ const ProjectForm = () => {
     const [newproject, setNewProject] = useState({
         id: "",
         project: "",
-        team: "",
+        team: "Team",
         start: "",
         end: "",
         detail: "",
     });
+    const [notif, setNotif] = useState("");
 
     const navigate = useNavigate();
 
@@ -31,6 +32,7 @@ const ProjectForm = () => {
     };
 
     const handleChange = (e) => {
+        setNotif("");
         if (e.target.name === "end") {
             setNewProject({
                 ...newproject,
@@ -49,25 +51,33 @@ const ProjectForm = () => {
     };
 
     const handleSubmit = (e) => {
-        console.log(newproject);
-
-        projects.push(newproject);
-
-        setNewProject({
-            id: "",
-            project: "",
-            team: "",
-            start: "",
-            end: "",
-            detail: "",
-        });
-        setTimeout(() => {
-            navigate("/project");
-        }, 1500);
+        if (
+            newproject.team !== "Team" &&
+            newproject.detail &&
+            newproject.start &&
+            newproject.project
+        ) {
+            setNotif("");
+            projects.push(newproject);
+            setNewProject({
+                id: "",
+                project: "",
+                team: "Team",
+                start: "",
+                end: "",
+                detail: "",
+            });
+            setTimeout(() => {
+                navigate("/project");
+            }, 1000);
+        } else {
+            setNotif("compleate the fields");
+        }
     };
 
     return (
         <div className="form">
+            {notif && <p>{notif}</p>}
             <input
                 type="text"
                 name="project"
