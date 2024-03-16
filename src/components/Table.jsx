@@ -15,7 +15,7 @@ const Table = ({ data }) => {
     return (
         <div className="table">
             <table>
-                <thead>
+                <thead className="animate__animated animate__fadeInDown">
                     <tr>
                         {header.map((item, index) => {
                             if (item !== "avatar") {
@@ -30,8 +30,8 @@ const Table = ({ data }) => {
                             key={indexs}
                             className={
                                 indexs % 2 === 0
-                                    ? "table-row row-even"
-                                    : "table-row row-odd"
+                                    ? "table-row row-even animate__animated animate__slideInUp"
+                                    : "table-row row-odd animate__animated animate__slideInUp"
                             }
                         >
                             {header.map((head, index) => {
