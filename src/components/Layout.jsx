@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-
 import { Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { RiNotification3Line } from "react-icons/ri";
+
 import Sidebar from "./Sidebar";
 import SidebarClose from "./SidebarClose";
-import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
-
-import { RiNotification3Line } from "react-icons/ri";
 import UserImg from "./UsersImg";
 import LogoutModal from "./LogoutModal";
 

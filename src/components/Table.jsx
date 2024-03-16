@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
+
 import "../style/components.css";
-import { GiItalia } from "react-icons/gi";
 
 const Table = ({ data }) => {
     let header = [

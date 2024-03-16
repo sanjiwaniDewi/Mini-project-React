@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 import "../style/components.css";
-import { useEffect, useState } from "react";
 
 const LoginRegisterLink = ({ title }) => {
     return (

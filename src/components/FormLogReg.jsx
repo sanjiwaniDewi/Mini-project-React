@@ -1,9 +1,11 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
+import { constant } from "../environments/constant";
+
 import "../style/card.css";
 import "../style/components.css";
-import { constant } from "../environments/constant";
 
 const FormLogReg = ({ title }) => {
     const [email, setEmail] = useState("");

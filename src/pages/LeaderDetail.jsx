@@ -1,11 +1,13 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
+
 import Layout from "../components/Layout";
-import "../style/components.css";
 import ExperiencesAndSkils from "../components/ExperiencesAndSkils";
 import Achivement from "../components/Achivement";
 import { constant } from "../environments/constant";
+
+import "../style/components.css";
 
 const LeaderDetail = () => {
     const [leaderData, setLeaderData] = useState({});

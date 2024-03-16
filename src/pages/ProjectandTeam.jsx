@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Table from "../components/Table";
-import projects from "../data/project";
 
 import "../style/pages.css";
 

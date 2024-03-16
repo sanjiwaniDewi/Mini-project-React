@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
-import Table from "../components/Table";
 import axios from "axios";
+
 import Pagination from "../components/Pagination";
 import Layout from "../components/Layout";
-import "../style/pages.css";
+import Table from "../components/Table";
 import TopTeamOrLeader from "../components/TopTeamOrLeader";
 import LineChart from "../components/LineChart";
+
 import { constant } from "../environments/constant";
+
+import "../style/pages.css";
 
 const Dashboard = () => {
     const [leader, setLeader] = useState([]);
