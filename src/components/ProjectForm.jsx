@@ -77,7 +77,7 @@ const ProjectForm = () => {
 
     return (
         <div className="form">
-            {notif && <p>{notif}</p>}
+            {notif && <p className="notif-form">{notif}</p>}
             <input
                 type="text"
                 name="project"
