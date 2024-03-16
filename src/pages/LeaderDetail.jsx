@@ -50,12 +50,12 @@ const LeaderDetail = () => {
                 <div className="content-main content-detail">
                     <div className="leader-detail">
                         <img
-                            className="leader-detail-avatar"
+                            className="leader-detail-avatar animate__animated animate__slideInUp"
                             src={leaderData.avatar}
                             alt="avatar"
                         />
-                        <div className="card card-leader">
-                            <div className="content-leader">
+                        <div className="card card-leader animate__animated animate__slideInRight">
+                            <div className="content-leader ">
                                 <h1>
                                     {leaderData.first_name}{" "}
                                     {leaderData.last_name}
