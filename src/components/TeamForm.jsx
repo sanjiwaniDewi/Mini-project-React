@@ -83,6 +83,7 @@ const TeamForm = () => {
     const handleAdd = () => {
         setNotif("");
         setShowaddmember(!showaddmember);
+
         setTeam({
             ...team,
             members: [...team.members, member],
@@ -109,7 +110,7 @@ const TeamForm = () => {
 
     return (
         <div className="form">
-            {notif && <p className="notif">{notif}</p>}
+            {notif && <p className="notif-form">{notif}</p>}
             <input
                 name="team"
                 type="text"
@@ -127,14 +128,7 @@ const TeamForm = () => {
             <h5>Member</h5>
             {team.members.length !== 0 &&
                 team.members.map((item, index) => (
-                    <div
-                        key={index}
-                        style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 5,
-                        }}
-                    >
+                    <div key={index}>
                         <input value={item.membername} disabled />
                         <input value={item.job} disabled />
                         <div>
@@ -160,7 +154,14 @@ const TeamForm = () => {
                         onChange={handleChangeMember}
                     />
 
-                    <button onClick={handleAdd}>Add</button>
+                    <button
+                        onClick={handleAdd}
+                        disabled={
+                            member.job && member.membername ? false : true
+                        }
+                    >
+                        Add
+                    </button>
                 </div>
             )}
             {!showaddmember && (
