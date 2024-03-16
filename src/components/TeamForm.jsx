@@ -11,7 +11,6 @@ const TeamForm = () => {
     const [leader, setLeader] = useState([]);
     const [totalData, setTotalData] = useState("");
     const [notif, setNotif] = useState("");
-
     const [team, setTeam] = useState({
         id: "",
         team: "",
@@ -23,6 +22,8 @@ const TeamForm = () => {
         membername: "",
         job: "",
     });
+
+    const formMember = [];
 
     const navigate = useNavigate();
 
@@ -80,6 +81,8 @@ const TeamForm = () => {
         });
     };
 
+    console.log("formember", formMember);
+
     const handleAdd = () => {
         setNotif("");
         setShowaddmember(!showaddmember);
@@ -89,6 +92,27 @@ const TeamForm = () => {
             members: [...team.members, member],
         });
     };
+
+    console.log(team.members);
+
+    const handleDelete = (key) => {
+        setTeam({
+            ...team,
+            members: team.members.filter((item, index) => index !== key),
+        });
+    };
+
+    team.members.map((item, index) =>
+        formMember.push(
+            <div key={index} className="members-field after-add">
+                <input value={item.membername} disabled />
+                <input value={item.job} disabled />
+                <div>
+                    <button onClick={() => handleDelete(index)}>delete</button>
+                </div>
+            </div>
+        )
+    );
 
     const handleSubmit = () => {
         if (team.lead !== "Leader" && team.team && team.members.length > 0) {
@@ -125,45 +149,39 @@ const TeamForm = () => {
                         <option value={lead}>{lead}</option>
                     ))}
             </select>
-            <h5>Member</h5>
-            {team.members.length !== 0 &&
-                team.members.map((item, index) => (
-                    <div key={index}>
-                        <input value={item.membername} disabled />
-                        <input value={item.job} disabled />
-                        <div>
-                            <button>delete</button>
-                        </div>
+            <div className="member-add">
+                <h4>Member</h4>
+                {team.members.length !== 0 && formMember}
+
+                {showaddmember && (
+                    <div className="members-field before-add">
+                        <input
+                            name="membername"
+                            type="text"
+                            placeholder="member name"
+                            value={member.membername}
+                            onChange={handleChangeMember}
+                        />
+                        <input
+                            name="job"
+                            type="text"
+                            placeholder="job"
+                            value={member.job}
+                            onChange={handleChangeMember}
+                        />
+
+                        <button
+                            onClick={handleAdd}
+                            disabled={
+                                member.job && member.membername ? false : true
+                            }
+                        >
+                            Add
+                        </button>
                     </div>
-                ))}
+                )}
+            </div>
 
-            {showaddmember && (
-                <div>
-                    <input
-                        name="membername"
-                        type="text"
-                        placeholder="member name"
-                        value={member.membername}
-                        onChange={handleChangeMember}
-                    />
-                    <input
-                        name="job"
-                        type="text"
-                        placeholder="job"
-                        value={member.job}
-                        onChange={handleChangeMember}
-                    />
-
-                    <button
-                        onClick={handleAdd}
-                        disabled={
-                            member.job && member.membername ? false : true
-                        }
-                    >
-                        Add
-                    </button>
-                </div>
-            )}
             {!showaddmember && (
                 <button onClick={handleAddMember}>Add Member</button>
             )}
