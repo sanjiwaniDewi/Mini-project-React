@@ -2,7 +2,7 @@ import "../style/components.css";
 
 const TopTeamOrLeader = ({ name, projects }) => {
     return (
-        <div className="top-team-leader">
+        <div className="top-team-leader animate__animated animate__fadeInDown">
             <p>{name}</p>
             <div>
                 <p>{projects}</p>
