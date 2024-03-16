@@ -614,3 +614,27 @@ td a {
     background-color: #001d3d60;
     color: #eeeded;
 }
+/* form team */
+.members-field {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100% !important;
+}
+.member-add h4 {
+    padding-top: 0.6rem;
+    padding-bottom: 0.4rem;
+}
+
+.members-field input {
+    width: 22vw;
+    @media (max-width: 700px) {
+        width: 32%;
+    }
+}
+
+.members-field .before-add button:disabled,
+button[disabled] {
+    background-color: #001d3d31 !important;
+}
